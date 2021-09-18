@@ -53,7 +53,7 @@ export const createMockServer = () => {
 
 export const randomMattresses = Factory.extend({
     description() { return faker.lorem.paragraph() },
-    image() { return faker.image.abstract() },
+    image() { return faker.image.fashion() },
     size() { return faker.random.arrayElement(["single","double","queen","king"]) },
     type() { return faker.random.arrayElement(["medicated", "ortho"]) },
     color() { return faker.internet.color() },

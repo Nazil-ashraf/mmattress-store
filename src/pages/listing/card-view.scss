@@ -1,0 +1,42 @@
+.card-view{
+  background-color: lightblue;
+  &:hover {
+    background-color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+  &--image{
+    display: flex;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 1rem 1rem 0.2rem 1rem;
+    &--img{
+
+    }
+  }
+  &--details{
+    display: flex;
+    margin: 1rem 1rem 0.2rem 1rem;
+    color: darkolivegreen;
+    font-size: 0.7rem;
+    &--header{
+
+    }
+    &--type{
+
+    }
+    &--comfort{
+
+    }
+
+  }
+  &--price{
+    margin: 0 1rem 1rem 1rem;
+    color: royalblue;
+    font-size: 0.8rem;
+  }
+
+}
