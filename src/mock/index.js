@@ -1,4 +1,4 @@
-import {createServer, Factory, Model} from "miragejs";
+import {belongsTo, createServer, Factory, hasMany, Model} from "miragejs";
 import {RestSerializer} from "miragejs";
 import faker from "faker"
 import {normalize} from "./normalize";
@@ -12,13 +12,16 @@ export const createMockServer = () => {
         environment: "development",
         models: {
             user: Model.extend(),
-            mattress: Model.extend(),
-            cart: Model.extend()
+            mattress: Model.extend({cart: belongsTo()}),
+            cart: Model.extend({mattresses: hasMany()})
         },
         seeds(server) {
             server.createList('user', 200)
             server.createList('mattress', 200)
             server.createList('cart', 5)
+                .forEach(cart => {
+                    server.createList("mattress", 5, {cart})
+                })
         },
         factories: {
             user: randomUsers,
@@ -38,6 +41,7 @@ export const createMockServer = () => {
                 }
             }),
             cart: ApplicationSerializer.extend({
+                include: ['mattresses'],
                 normalize(json) {
                     return normalize(this.schema, 'cart', json)
                 }
@@ -46,7 +50,7 @@ export const createMockServer = () => {
         routes() {
             this.resource("users", { path: "/api/users", timing: 500 })
             this.resource("mattresses", {path: "/api/mattresses", timing: 500})
-            this.resource("mattresses", {path: "/api/cart", timing: 500})
+            this.resource("cart", {path: "/api/cart", timing: 500})
         }
     })
 }
