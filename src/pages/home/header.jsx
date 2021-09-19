@@ -52,7 +52,9 @@ const Header = () => {
                         <Bookmark className={"color"}/>
                     </div>
                     <div className={"home--profile"}>
-                        <Person className={"color"} />
+                        <Link to="/login">
+                            <Person className={"color"} />
+                        </Link>
                     </div>
                 </div>
             </div>

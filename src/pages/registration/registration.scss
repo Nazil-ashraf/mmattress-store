@@ -1,0 +1,16 @@
+.registration{
+
+  &--container{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 25px;
+    justify-content: center;
+
+  }
+  &--button{
+    text-align: center;
+    padding: 20px;
+    margin-left: 35px;
+  }
+
+}
