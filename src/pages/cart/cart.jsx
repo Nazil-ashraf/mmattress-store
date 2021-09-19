@@ -33,7 +33,7 @@ const amount =cart.mattresses.map((num)=>num.price)
                         <div className={"cart--wrapper--content--heading--title"}>total</div>
                     </div>
                     <div cart--wrapper--content--details>
-                    {cart.mattresses.map(items=><Cartview items={items}/>)}
+                    {cart.mattresses.map(item=><Cartview item={item}/>)}
                     </div>
                 </div>
                 <div className={"cart--wrapper--payment"}>
