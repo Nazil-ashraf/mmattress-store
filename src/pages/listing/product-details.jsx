@@ -7,7 +7,6 @@ const ProductDetails = () => {
 
     const [mattress,setMattress]=useState({})
     const [cart, setCart] = useState({mattresses: []})
-    const [quantity,setQuantity]=useState(1)
     const {id} = useParams()
 
     useEffect(loadData, [id])
@@ -21,12 +20,11 @@ const ProductDetails = () => {
             .then(res => setCart(res.data))
     }
 
-    function readQty(event) {
+    function updateQuantity(event) {
 
         const value = event.target.value
         if (value >= 0) {
-            console.log(value)
-            setQuantity(value)
+            setMattress({...mattress, quantity: value})
         }
     }
 
@@ -37,7 +35,6 @@ const ProductDetails = () => {
             selected = mattress
             mattresses.push(selected)
         }
-        selected.quantity = quantity
         axios.put("/api/cart/1",{id: 1, mattresses})
     }
 
@@ -56,7 +53,7 @@ const ProductDetails = () => {
                     <div className="product-details--details--type">Size</div>
                     <div className="product-details--details--size">{mattress.size}</div>
                     <label className="product-details--quantity--label">Qty</label>
-                    <input className="product-details--quantity--input" type="number" onChange={readQty} value={quantity}/>
+                    <input className="product-details--quantity--input" type="number" onChange={updateQuantity} value={mattress.quantity}/>
                     <div className="product-details--details--type">Color</div>
                     <div className="product-details--dimention--color" style={{backgroundColor:mattress.color}}></div>
                     <div className="product-details--details--type">Height</div>
