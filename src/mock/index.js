@@ -48,9 +48,19 @@ export const createMockServer = () => {
             })
         },
         routes() {
+
             this.resource("users", { path: "/api/users", timing: 500 })
             this.resource("mattresses", {path: "/api/mattresses", timing: 500})
-            this.resource("cart", {path: "/api/cart", timing: 500})
+            this.resource("carts", {path: "/api/cart", timing: 500})
+
+            this.post("/api/login", (schema, request) => {
+                const {username, password} = JSON.parse(request.requestBody)
+                const user = schema.users.where({username, password})
+                if (user.models.length == 0) {
+                    return new Response(401, { error: 'unauthorized' }, { errors: [ 'Unauthorized user'] });
+                }
+                return user.models[0]
+            })
         }
     })
 }
