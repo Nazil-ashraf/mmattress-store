@@ -1,35 +1,75 @@
 .product-details {
-    &--image{
+  display: flex;
+  background-color: lightblue;
+  &--image{
+      height: 30rem;
 
-      &--imp{
 
+    }
+    &--details {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 1rem;
+
+      &--header {
+        font-weight: bold;
+        color: darkred;
+        text-decoration: underline;
+        font-size: large;
+      }
+
+      &--type {
+        font-size: small;
+      }
+        &--comfort {
+          font-size: small;
+        }
+
+        &--size {
+          font-size: small;
+        }
+      }
+
+      &--price {
+        color: crimson;
+        margin: 1rem;
+      }
+
+      &--quantity {
+        &--label {
+          font-size: small;
+        }
+
+        &--input {
+          width: 2rem;
+          background-color: gainsboro;
+          border-radius: 2px;
+        }
+      }
+
+      &--dimention {
+        display: flex;
+        flex-direction: column;
+
+        &--color {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        &--height {
+          font-size: small;
+        }
+
+        &--layers {
+        font-size: small;
+        }
+      }
+
+      &--button {
+        margin:1rem;
+        &:hover{
+          background-color: royalblue;
+        }
       }
     }
-  &--details{
-    &--header{
 
-    }
-    &--type{
-
-    }
-    &--comfort{
-
-    }
-    &--size{
-
-    }
-  }
-  &--price{
-
-  }
-  &--quantity{
-
-  }
-  &--dimention{
-
-  }
-
-  &--button{
-
-  }
-}
