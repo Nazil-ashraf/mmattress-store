@@ -1,13 +1,18 @@
 import './cartview.scss'
-import {useState} from "react";
-export function Cartview({item}){
+import {useEffect, useState} from "react";
+export function Cartview({mattress}){
 
-    const [quantity,setQuantity]=useState(0)
-   function receivedNumber(event){
-        const Quantity=event.target.value
-       if(Quantity>=0){
-           setQuantity(quantity)
-           item.quantity = quantity
+    const [item, setItem]=useState({})
+
+    useEffect(() => {
+        setItem(mattress)
+    }, [mattress])
+
+   function updateQuantity(event){
+
+        const quantity=event.target.value
+       if(quantity>=0) {
+           setItem({...item, quantity})
        }
    }
         return(
@@ -26,7 +31,7 @@ export function Cartview({item}){
                     <div className={"cartview--wrapper--details--price"}>$ {item.price}</div>
                     <div className={"cartview--wrapper--details--overall"}>
                         <div className={"cartview--wrapper--details--overall--title"}>Qty</div>
-                        <input type="number" value={quantity} onChange={receivedNumber} className={"cartview--wrapper--details--overall--enter"}/>
+                        <input type="number" value={item.quantity} onChange={updateQuantity} className={"cartview--wrapper--details--overall--enter"}/>
                     </div>
                     <button className={" "}>delete</button>
                 </div>

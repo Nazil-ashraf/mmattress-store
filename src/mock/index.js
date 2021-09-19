@@ -19,9 +19,6 @@ export const createMockServer = () => {
             server.createList('user', 200)
             server.createList('mattress', 200)
             server.createList('cart', 5)
-                .forEach(cart => {
-                    server.createList("mattress", 5, {cart})
-                })
         },
         factories: {
             user: randomUsers,
