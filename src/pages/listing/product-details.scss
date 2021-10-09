@@ -1,75 +1,62 @@
-.product-details {
-  display: flex;
-  background-color: lightblue;
-  &--image{
-      height: 30rem;
-
-
-    }
-    &--details {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-column-gap: 1rem;
-
-      &--header {
-        font-weight: bold;
-        color: darkred;
-        text-decoration: underline;
-        font-size: large;
+.product-details{
+  height: 100vh;
+  width: 100%;
+  &--wrap{
+    &--content{
+      display: flex;
+      flex-direction: row;
+      height: 80vh;
+      width: 57%;
+      margin-top:2rem;
+      background-color:lightgoldenrodyellow;
+      margin-left: 20rem;
+      &--image{
+        height: 25rem;
+        width: 25rem;
+        margin: 3rem;
       }
-
-      &--type {
-        font-size: small;
-      }
-        &--comfort {
-          font-size: small;
-        }
-
-        &--size {
-          font-size: small;
-        }
-      }
-
-      &--price {
-        color: crimson;
-        margin: 1rem;
-      }
-
-      &--quantity {
-        &--label {
-          font-size: small;
-        }
-
-        &--input {
-          width: 2rem;
-          background-color: gainsboro;
-          border-radius: 2px;
-        }
-      }
-
-      &--dimention {
+      &--details {
         display: flex;
         flex-direction: column;
-
-        &--color {
-          width: 1rem;
-          height: 1rem;
+        box-shadow: 1px 1px 1px 1px gray;
+        height: 27rem;
+        width: 19rem;
+        background-color: white;
+        box-shadow: gray;
+        margin-top: 3rem;
+        &--hovag{
+          font-weight: bold;
+          margin-left:2rem;
+          margin-top: 2rem;
         }
 
-        &--height {
-          font-size: small;
+        &--rating{
+          margin-left:2rem;
         }
-
-        &--layers {
-        font-size: small;
+        &--price {
+          font-weight: bold;
         }
-      }
+        &--button{
+          margin: 2rem;
+          border-radius:10px 10px ;
+          background-color: blue;
+          color: white;
+          height: 2rem;
+          width: 8rem;
+        }
+        &--hr{
+          width:14rem;
+          margin-left: 3rem;
+        }
+        &--bedDetails{
+          margin-top: 3rem;
 
-      &--button {
-        margin:1rem;
-        &:hover{
-          background-color: royalblue;
+        }
+        &--about{
+          font-weight: bold;
+          margin-left: 2rem;
         }
       }
     }
-
+  }
+}

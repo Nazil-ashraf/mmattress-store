@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  height: 12rem;
+  background-color: dimgrey;
+
+  &--product {
+    width: 20%;
+    margin-left: 3rem;
+
+
+    &--heading {
+      color: white;
+      margin-left: 4rem;
+      margin-top: 2rem;
+    }
+
+    &--subheading {
+      color: white;
+      margin-left: 4rem;
+    }
+  }
+  &--support{
+     width: 20%;
+    margin-left: 2rem;
+    &--heading{
+      color: white;
+      margin-top:2rem ;
+    }
+    &--subheading{
+      color: white;
+    }
+  }
+  &--copyright {
+    width: 60%;
+
+
+    &--subheading {
+      margin-top: 9rem;
+      margin-left: 19rem;
+      color: white;
+      font-size: small;
+    }
+  }
+}

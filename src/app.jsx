@@ -1,13 +1,14 @@
 import Listing from "./pages/listing/listing";
 import {BrowserRouter as Router} from "react-router-dom";
 import Routes from "./routes";
-import Header from "./pages/home/header";
+import Home from "./pages/home/home";
 
 const App = () => {
     return (
         <Router>
+
             <div>
-                <Header/>
+                <Home/>
                 <Routes/>
             </div>
         </Router>

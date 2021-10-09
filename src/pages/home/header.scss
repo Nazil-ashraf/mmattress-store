@@ -1,0 +1,95 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  background-color: #C2CD7E;
+  align-items: center;
+
+  &--logo {
+    width: 15%;
+    height: 100%;
+
+    &--image {
+      height: 5rem;
+      width: 70%;
+      margin-left: 16%;
+      background-color: #C2CD7E;
+      color: #C2CD7E;
+
+    }
+  }
+
+  &--title {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 90px;
+    margin-left: 1rem;
+
+    &--heading {
+      color: darkslategray;
+      font-weight: bold;
+      font-size: larger;
+      font-family: "Segoe UI";
+      font-size: 35px;
+      margin-top: 8%;
+    }
+
+    &--subheading {
+      margin-top: 15%;
+      color: darkslategray;
+      font-family: "Segoe UI";
+
+    }
+  }
+
+  &--search {
+    width: 50%;
+    height: 3rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 2.6rem;
+
+       &--input {
+         border:none;
+         width:80%;
+         height: 2rem;
+
+       }
+
+      &--searchButton {
+        border: none;
+      }
+    }
+
+
+  &--profile {
+    width: 10%;
+    height: 90px;
+    margin-left: 10px;
+
+    &--icon {
+      color: black;
+      margin-left: 90%;
+      height: 90px;
+      margin-top: 40px;
+
+    }
+  }
+
+  &--cart {
+    width: 10%;
+    height: 90px;
+
+    &--icon {
+      background-color: #C2CD7E;
+      height: 90px;
+      margin-top: 40px;
+      margin-left: 50%;
+
+    }
+
+  }
+
+}

@@ -1,42 +1,69 @@
 .card-view{
-  background-color: lightblue;
-  &:hover {
-    background-color: white;
-  }
-  a {
-    text-decoration: none;
-  }
+  background-color: #f6f7ef;
+  width:15rem;
+  height:19rem ;
+
+
+
+
   &--image{
     display: flex;
-    height: 12rem;
-    width: 12rem;
-    border-radius: 2rem;
+    height: 13rem;
+    width: 13rem;
     overflow: hidden;
-    margin: 1rem 1rem 0.2rem 1rem;
+    justify-content: space-between;
+
     &--img{
 
     }
   }
-  &--details{
+  &--details {
     display: flex;
-    margin: 1rem 1rem 0.2rem 1rem;
-    color: darkolivegreen;
+    flex-direction: column;
+    width: 13rem;
+    height: 5rem;
+    background-color: white;
+    //margin: 1rem 1rem 0.2rem 1rem;
+    color: black;
     font-size: 0.7rem;
-    &--header{
 
-    }
-    &--type{
-
-    }
-    &--comfort{
-
+    &--header {
+      font-weight: bold;
+      margin-left: 10px;
     }
 
+    &--type {
+      display: flex;
+      flex-direction: row;
+      margin-left: 10px;
+    }
+
+    &--comfort {
+
+    }
+
+
+    &--price {
+
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    &--rating {
+      display: flex;
+      flex-direction: row;
+
+      &--checked {
+        color: black;
+      }
+
+      &--notchecked {
+        color: black;
+      }
+    }
   }
-  &--price{
-    margin: 0 1rem 1rem 1rem;
-    color: royalblue;
-    font-size: 0.8rem;
-  }
+
 
 }
