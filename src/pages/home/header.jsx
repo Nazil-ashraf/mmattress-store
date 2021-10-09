@@ -45,6 +45,14 @@ export function Header () {
                       <ShoppingCartOutlined className={"header--cart--icon"}/>
                      </Link>
                     </div>
+                    <div className={"home--wishlist"}>
+                        <Bookmark className={"color"}/>
+                    </div>
+                    <div className={"home--profile"}>
+                        <Link to="/login">
+                            <Person className={"color"} />
+                        </Link>
+                    </div>
                 </div>
 
         //     {/*    <div className="buttons--wrap">*/}

@@ -1,0 +1,43 @@
+.loginpage{
+   border: 1px solid lightblue;
+  border-radius: 20px;
+   margin:70px;
+   width:30%;
+  margin-right: 20px;
+  height: 60vh;
+  background: lightcyan;
+  align-items: center;
+
+
+
+
+
+  &--header {
+    text-align: center;
+    padding: 50px;
+
+  }
+  &--content {
+    display: grid;
+    grid-template-rows: 30px 30px;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 25px;
+
+    &--input {
+      border: none;
+    }
+
+    &--button {
+      border: 1px solid #2b76ff85;
+      background-color: #2b76ff85;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 12px 45px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: transform 80ms ease-in;
+    }
+  }
+}
