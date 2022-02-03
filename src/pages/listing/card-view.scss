@@ -1,41 +1,53 @@
+
 .card-view{
   background-color: #f6f7ef;
-  width:15rem;
-  height:19rem ;
+  width:275px;
+  height: 275px;
+  margin-left: 3rem;
+  padding-bottom: 30rem;
+  justify-content: space-between;
+
 
 
 
 
   &--image{
-    display: flex;
-    height: 13rem;
-    width: 13rem;
-    overflow: hidden;
-    justify-content: space-between;
+    //display: flex;
+    width: 275px;
+    height: 275px;
+    //overflow: hidden;
+    //justify-content: space-between;
 
     &--img{
-
+      height: 275px;
+      width: 275px;
     }
   }
   &--details {
     display: flex;
     flex-direction: column;
-    width: 13rem;
-    height: 5rem;
+    width: 275px;
+    height: 150px;
     background-color: white;
     //margin: 1rem 1rem 0.2rem 1rem;
     color: black;
     font-size: 0.7rem;
 
     &--header {
-      font-weight: bold;
-      margin-left: 10px;
+      font-weight: bolder;
+      margin-left: 20px;
+      margin-top: 15px;
+      font-size: 20px;
+
     }
 
     &--type {
       display: flex;
       flex-direction: row;
-      margin-left: 10px;
+      color: #7070707A;
+      margin-left: 20px;
+      margin-top: 5px;
+      font-size:20px;
     }
 
     &--comfort {
@@ -46,14 +58,18 @@
     &--price {
 
       color: black;
-      font-size: 1rem;
+      font-size: 20px;
       font-weight: bold;
-      margin-left: 10px;
+      margin-left: 20px;
+      margin-top: 5px;
     }
 
     &--rating {
       display: flex;
       flex-direction: row;
+      margin-left: 19px;
+      margin-top: 5px;
+
 
       &--checked {
         color: black;

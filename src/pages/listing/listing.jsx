@@ -1,5 +1,4 @@
 import './listing.scss'
-
 import {useEffect, useState} from "react";
 import axios from "axios";
 import CardView from "./card-view";

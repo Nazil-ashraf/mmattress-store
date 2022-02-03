@@ -1,7 +1,9 @@
 .footer {
   display: flex;
   height: 12rem;
+  width: 70%;
   background-color: dimgrey;
+  margin: auto;
 
   &--product {
     width: 20%;
@@ -12,33 +14,40 @@
       color: white;
       margin-left: 4rem;
       margin-top: 2rem;
+      font-family: Roboto;
     }
 
     &--subheading {
       color: white;
       margin-left: 4rem;
+      font-family: Roboto;
     }
   }
   &--support{
      width: 20%;
     margin-left: 2rem;
+    font-family: Roboto;
     &--heading{
       color: white;
       margin-top:2rem ;
+      font-family: Roboto;
     }
     &--subheading{
       color: white;
+      font-family: Roboto;
     }
   }
   &--copyright {
     width: 60%;
+    margin-left: 18rem;
 
 
     &--subheading {
       margin-top: 9rem;
-      margin-left: 19rem;
+      margin-left: 22rem;
       color: white;
       font-size: small;
+      font-family: Roboto;
     }
   }
 }

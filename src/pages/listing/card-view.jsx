@@ -8,15 +8,16 @@ export function CardView({mattress}){
 
     return(
         <div className="card-view">
-            <Link to={`/mattress/id`}>
+            <Link to={`/mattresses/${mattress.id}`}>
                 <div className="card-view--image">
                     <img className="card-view--image--img" src={mattress.image}/>
 
                 </div>
+            </Link>
                 <div className="card-view--details">
                     <div className="card-view--details--header">HOVAG</div>
                     <div className="card-view--details--type">{mattress.type} ,{mattress.comfort}</div>
-                    <div className="card-view--details--price">{mattress.price}</div>
+                    <div className="card-view--details--price">₹ {mattress.price}</div>
                     <div className={"card-view--details--rating"}>
                     <StarRate className={"card-view--details--rating--checked"} />
                     <StarRate className={"card-view--details--rating--checked"}/>
@@ -26,7 +27,7 @@ export function CardView({mattress}){
                 </div>
 
                 </div>
-            </Link>
+
         </div>
     )
 }

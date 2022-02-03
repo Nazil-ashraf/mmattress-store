@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import Header from "../home/header";
 import {StarBorderOutlined, StarRate} from "@material-ui/icons";
+import Footer from "../home/footer";
 
 const ProductDetails = () => {
 
@@ -22,32 +23,31 @@ const ProductDetails = () => {
             .then(res => setCart(res.data))
     }
 
-    function updateQuantity(event) {
-
-        const value = event.target.value
-        if (value >= 0) {
-            setMattress({...mattress, quantity: value})
-        }
-    }
 
     function addToCart() {
         const { mattresses } = cart
-        let selected = mattresses.find(m => m.id === mattress.id);
+        let selected = mattresses.find((m) => m.id === mattress.id);
         if (!selected) {
             selected = mattress
-            mattresses.push(selected)
+            mattresses.push({...mattress, quantity: 1})
+            axios.put("/api/cart/1", {id: 1, mattresses})
         }
-        axios.put("/api/cart/1",{id: 1, mattresses})
     }
 
     return (
         <div className={"product-details"}>
             <Header/>
+
             <div className={"product-details--wrap"}>
                 <div className={"product-details--wrap--content"}>
-                  <img className={"product-details--wrap--content--image"} src={mattress.image}/>
+                    <div className={"product-details--wrap--content--column-wrap"}>
+                  <img className={"product-details--wrap--content--column-wrap--image"} src={mattress.image}/>
+                           <div className={"product-details--wrap--content--column-wrap--product-details"}>Product Details</div>
+                        <div className={"product-details--wrap--content--column-wrap--discription"}>{mattress.description}</div>
+
+                    </div>
                     <div className={"product-details--wrap--content--details"}>
-                        <div className={"product-details--wrap--content--details--hovag"}>hover</div>
+                        <div className={"product-details--wrap--content--details--hovag"}>HOVAG</div>
                         <div className={"product-details--wrap--content--details--rating"}>
                             <StarRate className={"product-details--wrap--content--details--rating--checked"} />
                             <StarRate className={"product-details--wrap--content--details--rating--checked"}/>
@@ -55,50 +55,33 @@ const ProductDetails = () => {
                             <StarBorderOutlined className={"product-details--wrap--content--details--rating--notchecked"}/>
                             <StarBorderOutlined className={"product-details--wrap--content--details--rating--notchecked"}/>
                         </div>
-                        <div className={"product-details--wrap--content--details--price"}>{mattress.price}</div>
-                        <button className={"product-details--wrap--content--details--button"}> Add to cart</button>
+                        <div className={"product-details--wrap--content--details--price"}>₹ {mattress.price}</div>
+                        <button className={"product-details--wrap--content--details--button"} onClick={addToCart}> Add to cart</button>
                         <hr className={"product-details--wrap--content--details--hr"}/>
                         <div className={"product-details--wrap--content--details--bedDetails"}>
-                        <div className={"product-details--wrap--content--details--bedDetials--about"}>Bed size</div>
-                        <div className={"product-details--wrap--content--details--bedDetials--about"}>Type</div>
-                        <div className={"product-details--wrap--content--details--bedDetials--about"}>Height</div>
-                        <div className={"product-details--wrap--content--details--bedDetials--about"}>colour</div>
-                            <div className={"product-details--wrap--content--details--bedDetails--about"}>layers</div>
+                            <div className={"product-details--wrap--content--details--bedDetails--about"}>Bed size</div>
+                        <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.size}</div>
+
+                        <div className={"product-details--wrap--content--details--bedDetails--about"}>Type </div>
+                            <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.type}</div>
+
+                        <div className={"product-details--wrap--content--details--bedDetails--about"}>Height  </div>
+                            <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.height}</div>
+
+                        <div className={"product-details--wrap--content--details--bedDetails--about"}>colour</div>
+                            <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.color}</div>
+
+                            <div className={"product-details--wrap--content--details--bedDetails--about"}>layers  </div>
+                                <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.layers}</div>
+
                             <div className={"product-details--wrap--content--details--bedDetails--about"}>Comfort</div>
-                           <div className={"product-details--wrap--content--details--bedDetails--about"}>Manfactures</div>
+                                <div className={"product-details--wrap--content--details--bedDetails--about--details"}>{mattress.comfort}</div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
-        // <div className="product-details">
-        //     <div className="product-details--image">
-        //         <img className="product-details--image" src={mattress.image}/>
-        //     </div>
-        //     <div>
-        //         <div className="product-details--details--header">Mattress-Store</div>
-        //         <div className="product-details--details">
-        //             <div className="product-details--details--type">Type</div>
-        //             <div className="product-details--details--type">{mattress.type}</div>
-        //             <div className="product-details--details--type">Comfort</div>
-        //             <div className="product-details--details--comfort">{mattress.comfort}</div>
-        //             <div className="product-details--details--type">Size</div>
-        //             <div className="product-details--details--size">{mattress.size}</div>
-        //             <label className="product-details--quantity--label">Qty</label>
-        //             <input className="product-details--quantity--input" type="number" onChange={updateQuantity} value={mattress.quantity}/>
-        //             <div className="product-details--details--type">Color</div>
-        //             <div className="product-details--dimention--color" style={{backgroundColor:mattress.color}}></div>
-        //             <div className="product-details--details--type">Height</div>
-        //             <div className="product-details--dimention--height">{mattress.height}</div>
-        //             <div className="product-details--details--type">Layers</div>
-        //             <div className="product-details--dimention--layers">{mattress.layers}</div>
-        //         </div>
-        //         <div className="product-details--price">{mattress.price}$</div>
-        //         <button className="product-details--button" onClick={addToCart}>Add</button>
-        //
-        //     </div>
-        // </div>
     )
 }
-
 export default ProductDetails

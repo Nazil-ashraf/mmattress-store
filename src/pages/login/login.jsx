@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import './login.scss'
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
+import Header from "../home/header";
 
 
 function Login() {
@@ -28,16 +29,23 @@ function Login() {
      }
 
     return(
-        <div className="loginpage">
-            <div className="loginpage--header">Login/Sign Up On Mattress</div>
-            <div className="loginpage--content">
-            <input placeholder="Enter Username"  className="loginpage--content--input" onChange={loginUser}/>
-            <input type="password" placeholder="Enter password" className="loginpage--content--input" onChange={loginPassword}/>
-            <button  className="loginpage--content--button" onClick={handleLogin}>LOGIN</button>
-            </div>
-            <div>
-                <Link to="/register">Register</Link>
-            </div>
+        <div className={"login"}>
+            <Header/>
+        <div className="login--page">
+
+            <div className="login--page--header">Sign in to your account</div>
+            <input placeholder="Enter Username"  className="login--page--input" onChange={loginUser}/>
+            <input type="password" placeholder="Enter password" className="login--page--password" onChange={loginPassword}/>
+
+            <button  className="login--page--button" onClick={handleLogin}>Sign in</button>
+            <div className={"login--page--account"}>Don't have an account?</div>
+            <Link to={"/register"}>
+            <button className={"login--page--create-button"}>Create account</button>
+            </Link>
+
+
+
+        </div>
         </div>
     )
 }

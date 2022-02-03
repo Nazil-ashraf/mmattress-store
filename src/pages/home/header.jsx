@@ -10,7 +10,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import image from "./component/sleep.jpg";
 import logo from "./component/logo.png";
-import matress from "./component/matress.jpeg"
+
 import './home.scss'
 
 import CardView from "../listing/card-view";
@@ -25,34 +25,27 @@ export function Header () {
 
     return (
             <div className={"header"}>
-                <div className={"header--logo"}>
-                    <img className={"header--logo--image"} src={logo} alt=""/>
-                </div>
+                {/*<div className={"header--logo"}>*/}
+                    <img className={"header--image"} src={logo} alt=""/>
+                {/*</div>*/}
                 <div className={"header--title"}>
                     <div className={"header--title--head"}>mattress</div>
                     <div className={"header--title--subheading"}>your dream store</div>
                 </div>
                 <div className={"header--search"}>
-                              <input className={"head--search--content--input"} type={"search"} placeholder={"Search"}/>
-                                  <SearchOutlined  className={"header--search--paper--searchButton"} />
+                              <input className={"header--search--input"} type={"search"} placeholder={"Search"}/>
+                                  <SearchOutlined  className={"header--search--searchButton"} />
                            </div>
-                     <div className={"header--profile"}>
-                      <AccountCircle className={"header--profile--icon"}/>
-
-                    </div>
-                    <div className={"header--cart"}>
-                     <Link to={"/cart"}>
-                      <ShoppingCartOutlined className={"header--cart--icon"}/>
+                     {/*<div className={"header--profile"}>*/}
+                <Link className={"header--profilelink"} to={"/login"}>
+                      <AccountCircle className={"header--profilelink--profile"}/>
+                </Link>
+                    {/*</div>*/}
+                    {/*<div className={"header--cart"}>*/}
+                     <Link className={"header--cartlink"} to={"/cart"}>
+                      <ShoppingCartOutlined className={"header--cartlink--cart"}/>
                      </Link>
-                    </div>
-                    <div className={"home--wishlist"}>
-                        <Bookmark className={"color"}/>
-                    </div>
-                    <div className={"home--profile"}>
-                        <Link to="/login">
-                            <Person className={"color"} />
-                        </Link>
-                    </div>
+                    {/*</div>*/}
                 </div>
 
         //     {/*    <div className="buttons--wrap">*/}

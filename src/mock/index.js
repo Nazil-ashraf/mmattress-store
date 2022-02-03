@@ -16,8 +16,8 @@ export const createMockServer = () => {
             cart: Model.extend({mattresses: hasMany()})
         },
         seeds(server) {
-            server.createList('user', 200)
-            server.createList('mattress', 200)
+            server.createList('user', 20)
+            server.createList('mattress', 20)
             server.createList('cart', 5)
         },
         factories: {
@@ -71,7 +71,8 @@ export const randomMattresses = Factory.extend({
     price() { return faker.finance.amount() },
     height() { return faker.datatype.number({'min': 30, 'max': 100}) },
     layers() { return faker.datatype.number({'min': 2, 'max': 5}) },
-    comfort() { return faker.random.arrayElement(["form","soft","cotton"]) }
+    comfort() { return faker.random.arrayElement(["form","soft","cotton"]) },
+    quantity() { return 1 }
 })
 
 export const randomCart = Factory.extend({
